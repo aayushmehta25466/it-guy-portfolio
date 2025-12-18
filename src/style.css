@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+/* ===== Tailwind CSS v4 Theme Configuration ===== */
+@theme {
+  /* Font Family */
+  --font-sans: 'Inter', sans-serif;
+
+  /* Custom Brand Colors */
+  --color-brand-grey: #6B7280;
+  --color-brand-slate: #64748B;
+  --color-brand-navy: #0B3D91;
+  --color-brand-dark: #0f172a;
+  --color-brand-light: #f8fafc;
+
+  /* Custom Animations */
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-spin-slow: spin 3s linear infinite;
+
+  /* Keyframes */
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ===== Base Layer - Global Styles ===== */
+@layer base {
+  :root {
+    font-family: var(--font-sans), system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Light mode defaults */
+  :root {
+    color: #213547;
+    background-color: var(--color-brand-light);
+  }
+
+  /* Dark mode */
+  .dark {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: var(--color-brand-dark);
+  }
+
+  body {
+    @apply m-0 min-w-[320px] min-h-screen;
+  }
+
+  a {
+    @apply font-medium no-underline;
+    color: #646cff;
+  }
+
+  a:hover {
+    color: #535bf2;
+  }
+
+  .dark a:hover {
+    color: #747bff;
+  }
+
+  h1 {
+    @apply text-5xl leading-tight;
+  }
+}
+
+/* ===== Custom Utility Classes ===== */
+
+/* Hidden utility for toggling visibility */
+@utility hidden {
+  display: none;
+}
+
+/* Flex utility */
+@utility flex {
+  display: flex;
+}
+
+@utility logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+@utility logo-hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+@utility logo-vanilla-hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+@utility card {
+  padding: 2em;
+}
+
+@utility read-the-docs {
+  color: #888;
+}
+
+@utility btn-base {
+  @apply rounded-lg border border-transparent px-5 py-2.5 text-base font-medium cursor-pointer;
+  transition: border-color 0.25s;
+  background-color: #f9f9f9;
+}
+
+@utility btn-base-dark {
+  background-color: #1a1a1a;
+}
+
+@utility btn-hover {
+  border-color: #646cff;
+}
+
+@utility btn-focus {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@utility app-container {
+  @apply max-w-7xl mx-auto p-8 text-center;
+}
+
+/* Nav hidden utility for scroll behavior */
+@utility nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Modal open - prevent body scroll */
+@utility modal-open {
+  overflow: hidden;
+}
+
+/* Reveal animation for scroll */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+@utility reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Line clamp utility */
+@utility line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@utility line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Component Styles ===== */
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #64748B;
+  border-radius: 20px;
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  transition: opacity 0.3s ease-in-out;
+}
+.modal-content {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hide scrollbar when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Observer Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar Hide/Show Transition */
+#main-nav {
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Progressive Line for Nav Items */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .animate-fade-in-up { animation: none; opacity: 1; }
+  * { scroll-behavior: auto !important; }
+}

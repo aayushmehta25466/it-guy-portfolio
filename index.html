@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Portfolio | Clean & Minimal</title>
+  <meta name="description"
+    content="A modern, accessible developer portfolio featuring full-stack projects and clean design.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="./src/style.css">
+
+</head>
+
+<body
+  class="bg-brand-light dark:bg-brand-dark text-brand-slate dark:text-gray-300 transition-colors duration-300 antialiased selection:bg-brand-navy selection:text-white">
+
+  <!-- Skip to Content for Accessibility -->
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-navy text-white px-4 py-2 rounded z-50">Skip
+    to content</a>
+
+  <!-- Navigation -->
+  <nav id="main-nav"
+    class="fixed w-full z-40 top-0 start-0 bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <!-- Left: Logo -->
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse group z-50">
+        <span
+          class="self-center text-2xl font-bold whitespace-nowrap text-brand-navy dark:text-white group-hover:text-brand-slate transition-colors">DevPortfolio.</span>
+      </a>
+
+      <!-- Right Wrapper: Mobile Button + Theme Toggle + Desktop Menu -->
+      <div class="flex items-center md:order-2 gap-2">
+
+        <!-- Desktop Menu (Right Sided) -->
+        <div class="hidden md:flex items-center space-x-8 mr-6" id="navbar-desktop">
+          <ul class="flex flex-row space-x-8 font-medium">
+            <li><a href="#home"
+                class="nav-link block py-2 text-gray-900 rounded hover:text-brand-navy dark:text-white dark:hover:text-blue-400 transition-colors"
+                data-section="home">Home</a></li>
+            <li><a href="#about"
+                class="nav-link block py-2 text-gray-900 rounded hover:text-brand-navy dark:text-white dark:hover:text-blue-400 transition-colors"
+                data-section="about">About</a></li>
+            <li><a href="#projects"
+                class="nav-link block py-2 text-gray-900 rounded hover:text-brand-navy dark:text-white dark:hover:text-blue-400 transition-colors"
+                data-section="projects">Projects</a></li>
+            <li><a href="#contact"
+                class="nav-link block py-2 text-gray-900 rounded hover:text-brand-navy dark:text-white dark:hover:text-blue-400 transition-colors"
+                data-section="contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" type="button"
+          class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2.5 px-3.5"
+          aria-label="Toggle Dark Mode">
+          <i id="theme-toggle-dark-icon" class="fas fa-moon" style="display:none"></i>
+          <i id="theme-toggle-light-icon" class="fas fa-sun" style="display:none"></i>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" data-collapse-toggle="navbar-sticky" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Dropdown (Full Width) -->
+      <div class="items-center justify-between hidden w-full md:hidden" id="navbar-sticky">
+        <ul
+          class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 space-y-2">
+          <li><a href="#home" class="mobile-nav-link block py-2 px-3 rounded transition-colors"
+              data-section="home">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link block py-2 px-3 rounded transition-colors"
+              data-section="about">About</a></li>
+          <li><a href="#projects" class="mobile-nav-link block py-2 px-3 rounded transition-colors"
+              data-section="projects">Projects</a></li>
+          <li><a href="#contact" class="mobile-nav-link block py-2 px-3 rounded transition-colors"
+              data-section="contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <!-- Increased height/padding for less concentration -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-32 pb-20 relative overflow-hidden">
+      <!-- Background Decoration -->
+      <div
+        class="absolute -z-10 w-96 h-96 bg-blue-200 dark:bg-blue-900 rounded-full blur-3xl opacity-30 top-1/4 -left-10 animate-pulse">
+      </div>
+      <div
+        class="absolute -z-10 w-72 h-72 bg-gray-300 dark:bg-gray-700 rounded-full blur-3xl opacity-30 bottom-1/4 -right-10 animate-pulse"
+        style="animation-delay: 1s;"></div>
+
+      <div class="max-w-7xl mx-auto px-4 text-center animate-fade-in-up flex flex-col items-center gap-6">
+        <div
+          class="inline-flex justify-between items-center py-1 px-1 pr-4 text-sm text-brand-navy bg-blue-100 rounded-full dark:bg-blue-900/50 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">
+          <span class="text-xs bg-brand-navy rounded-full text-white px-4 py-1.5 mr-3">Available</span> <span
+            class="text-sm font-medium">Open to work</span>
+        </div>
+
+        <h1
+          class="text-3xl font-extrabold tracking-tight leading-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white max-w-4xl">
+          Building digital products with <br>
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-brand-navy to-brand-slate dark:from-blue-400 dark:to-gray-400">purpose
+            and precision.</span>
+        </h1>
+
+        <p class="text-lg font-normal text-brand-grey lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 max-w-5xl">
+          I'm a Full Stack Developer specializing in building exceptional digital experiences. Currently focused on
+          accessible, human-centered products.
+        </p>
+
+        <div class="flex flex-col mb-8 lg:mb-12 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 mt-4">
+          <a href="#projects"
+            class="inline-flex justify-center items-center py-3 px-8 text-base font-medium text-center text-white rounded-lg bg-brand-navy hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 transition-transform hover:-translate-y-1 shadow-lg shadow-blue-500/20">
+            View Projects
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a href="#contact"
+            class="inline-flex justify-center items-center py-3 px-8 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 transition-colors">
+            Contact Me
+          </a>
+        </div>
+
+        <!-- Tech Stack Marquee (Static representation for simplicity) -->
+        <div
+          class="px-4 mx-auto text-center w-full max-w-5xl opacity-70 grayscale hover:grayscale-0 transition-all duration-500 mt-12">
+          <span class="text-sm font-semibold text-gray-400 uppercase tracking-widest block mb-6">Tech Stack</span>
+          <div
+            class="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-3xl sm:text-4xl text-brand-slate dark:text-gray-500">
+            <i class="fab fa-html5 hover:text-orange-500 transition-colors" title="HTML5"></i>
+            <i class="fab fa-css3-alt hover:text-blue-500 transition-colors" title="CSS3"></i>
+            <i class="fab fa-js hover:text-yellow-400 transition-colors" title="JavaScript"></i>
+            <i class="fab fa-react hover:text-cyan-400 transition-colors" title="React"></i>
+            <i class="fab fa-node hover:text-green-500 transition-colors" title="Node.js"></i>
+            <i class="fab fa-git-alt hover:text-red-500 transition-colors" title="Git"></i>
+            <i class="fas fa-database hover:text-blue-400 transition-colors" title="SQL"></i>
+            <i class="fab fa-docker hover:text-blue-600 transition-colors" title="Docker"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800/50">
+      <div class="max-w-7xl mx-auto px-4 reveal">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="inline-block p-2 mb-4 rounded-lg bg-gray-100 dark:bg-gray-700/50">
+              <i class="fas fa-user text-brand-navy dark:text-blue-400 text-xl"></i>
+            </div>
+            <h2 class="text-3xl font-bold mb-6 text-brand-navy dark:text-white">About Me</h2>
+            <div class="space-y-4 text-brand-grey dark:text-gray-300 leading-relaxed">
+              <p>
+                Hello! I'm a passionate developer who bridges the gap between design and engineering. I enjoy creating
+                software that is not only performant and scalable but also provides an intuitive user experience.
+              </p>
+              <p>
+                With a background in computer science and 4+ years of hands-on experience, I've worked on everything
+                from small business websites to complex enterprise dashboards. I believe in clean code, accessibility,
+                and continuous learning.
+              </p>
+            </div>
+
+            <div class="flex space-x-6 my-8">
+              <a href="#"
+                class="text-brand-slate hover:text-brand-navy dark:text-gray-400 dark:hover:text-white text-2xl transition-colors transform hover:scale-110"
+                aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#"
+                class="text-brand-slate hover:text-brand-navy dark:text-gray-400 dark:hover:text-white text-2xl transition-colors transform hover:scale-110"
+                aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#"
+                class="text-brand-slate hover:text-brand-navy dark:text-gray-400 dark:hover:text-white text-2xl transition-colors transform hover:scale-110"
+                aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <a href="#"
+              class="inline-flex items-center px-6 py-3 text-sm font-medium text-brand-navy bg-transparent border border-brand-navy rounded hover:bg-brand-navy hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:border-blue-400 dark:text-blue-400 dark:hover:text-white dark:hover:bg-blue-500 transition-colors">
+              <i class="fas fa-download mr-2"></i> Download Resume
+            </a>
+          </div>
+
+          <div class="relative">
+            <!-- Timeline / Highlights -->
+            <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+
+            <div class="relative pl-16 mb-10 group">
+              <div
+                class="absolute left-6 top-1.5 w-4 h-4 rounded-full bg-brand-navy border-4 border-white dark:border-gray-800 transition-transform group-hover:scale-125">
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Senior Frontend Dev</h3>
+              <p class="text-sm text-brand-navy dark:text-blue-400 font-medium mb-1">TechCorp Inc. • 2023 - Present</p>
+              <p class="text-brand-grey dark:text-gray-400 text-sm">Leading the frontend team in migrating legacy apps
+                to React. Improved load times by 40%.</p>
+            </div>
+
+            <div class="relative pl-16 mb-10 group">
+              <div
+                class="absolute left-6 top-1.5 w-4 h-4 rounded-full bg-brand-slate border-4 border-white dark:border-gray-800 transition-transform group-hover:scale-125">
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Full Stack Developer</h3>
+              <p class="text-sm text-brand-navy dark:text-blue-400 font-medium mb-1">Creative Agency • 2021 - 2023</p>
+              <p class="text-brand-grey dark:text-gray-400 text-sm">Built custom e-commerce solutions and CMS platforms
+                for diverse clients.</p>
+            </div>
+
+            <div class="relative pl-16 group">
+              <div
+                class="absolute left-6 top-1.5 w-4 h-4 rounded-full bg-gray-400 border-4 border-white dark:border-gray-800 transition-transform group-hover:scale-125">
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Freelance</h3>
+              <p class="text-sm text-brand-navy dark:text-blue-400 font-medium mb-1">Various Clients • 2019 - 2021</p>
+              <p class="text-brand-grey dark:text-gray-400 text-sm">Delivered 20+ websites for local businesses and
+                startups. Mastered WordPress and Shopify.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-brand-dark">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-3xl font-bold mb-4 text-brand-navy dark:text-white">Featured Projects</h2>
+          <p class="text-brand-grey dark:text-gray-400 max-w-2xl mx-auto">
+            A selection of projects demonstrating my expertise in frontend architecture, backend logic, and UI design.
+          </p>
+
+          <!-- Filters -->
+          <div class="flex flex-wrap justify-center gap-3 mt-8" id="project-filters">
+            <button
+              class="filter-btn active px-5 py-2 text-sm font-medium rounded-full bg-brand-navy text-white transition-all shadow-md transform hover:scale-105"
+              data-filter="all">All</button>
+            <button
+              class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 text-brand-grey dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all transform hover:scale-105"
+              data-filter="frontend">Frontend</button>
+            <button
+              class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 text-brand-grey dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all transform hover:scale-105"
+              data-filter="backend">Backend</button>
+            <button
+              class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 text-brand-grey dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all transform hover:scale-105"
+              data-filter="fullstack">Fullstack</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <!-- Changed to Flexbox for centering items -->
+        <div id="projects-grid" class="flex flex-wrap justify-center gap-8">
+          <!-- Projects injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 reveal">
+        <div class="grid md:grid-cols-2 gap-16">
+          <div>
+            <h2 class="text-3xl font-bold mb-6 text-brand-navy dark:text-white">Get In Touch</h2>
+            <p class="text-brand-grey dark:text-gray-400 mb-8 text-lg">
+              Have a project in mind or just want to say hi? Feel free to send me a message. I'm currently open to new
+              opportunities.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-center text-brand-slate dark:text-gray-300 group">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg mr-4 group-hover:bg-blue-100 dark:group-hover:bg-blue-900 transition-colors">
+                  <i class="fas fa-envelope text-xl group-hover:text-brand-navy dark:group-hover:text-blue-400"></i>
+                </div>
+                <a href="mailto:hello@example.com"
+                  class="hover:text-brand-navy dark:hover:text-blue-400 transition-colors text-lg">hello@example.com</a>
+              </div>
+              <div class="flex items-center text-brand-slate dark:text-gray-300 group">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg mr-4 group-hover:bg-blue-100 dark:group-hover:bg-blue-900 transition-colors">
+                  <i class="fab fa-github text-xl group-hover:text-brand-navy dark:group-hover:text-blue-400"></i>
+                </div>
+                <a href="https://github.com/yourusername" target="_blank"
+                  class="hover:text-brand-navy dark:hover:text-blue-400 transition-colors text-lg">github.com/yourusername</a>
+              </div>
+              <div class="flex items-center text-brand-slate dark:text-gray-300 group">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg mr-4 group-hover:bg-blue-100 dark:group-hover:bg-blue-900 transition-colors">
+                  <i class="fab fa-linkedin text-xl group-hover:text-brand-navy dark:group-hover:text-blue-400"></i>
+                </div>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"
+                  class="hover:text-brand-navy dark:hover:text-blue-400 transition-colors text-lg">linkedin.com/in/yourprofile</a>
+              </div>
+              <div class="flex items-center text-brand-slate dark:text-gray-300 group">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg mr-4 group-hover:bg-blue-100 dark:group-hover:bg-blue-900 transition-colors">
+                  <i
+                    class="fas fa-map-marker-alt text-xl group-hover:text-brand-navy dark:group-hover:text-blue-400"></i>
+                </div>
+                <span class="text-lg">San Francisco, CA</span>
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form"
+            class="space-y-6 bg-gray-50 dark:bg-gray-800 p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
+            <div>
+              <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
+              <input type="text" id="name"
+                class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-brand-navy focus:border-brand-navy block w-full p-3 outline-none focus:ring-2 transition-shadow"
+                placeholder="John Doe" required>
+            </div>
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
+              <input type="email" id="email"
+                class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-brand-navy focus:border-brand-navy block w-full p-3 outline-none focus:ring-2 transition-shadow"
+                placeholder="name@company.com" required>
+            </div>
+            <div>
+              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+              <textarea id="message" rows="4"
+                class="block p-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-brand-navy focus:border-brand-navy dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none focus:ring-2 transition-shadow"
+                placeholder="Let's build something great..." required></textarea>
+            </div>
+            <button type="submit"
+              class="w-full text-white bg-brand-navy hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all transform hover:-translate-y-0.5">Send
+              Message</button>
+            <p id="form-status" class="hidden text-center text-sm font-medium mt-2 text-green-600 dark:text-green-400">
+              Message sent successfully!</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-brand-dark border-t border-gray-100 dark:border-gray-800">
+    <div class="w-full max-w-7xl mx-auto p-4 md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+          <span
+            class="self-center text-2xl font-bold whitespace-nowrap text-brand-navy dark:text-white">DevPortfolio.</span>
+        </a>
+        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+          <li><a href="#home"
+              class="hover:text-brand-navy dark:hover:text-white me-4 md:me-6 transition-colors">Home</a></li>
+          <li><a href="#about"
+              class="hover:text-brand-navy dark:hover:text-white me-4 md:me-6 transition-colors">About</a></li>
+          <li><a href="#projects"
+              class="hover:text-brand-navy dark:hover:text-white me-4 md:me-6 transition-colors">Projects</a></li>
+          <li><a href="#contact" class="hover:text-brand-navy dark:hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#"
+          class="hover:underline">DevPortfolio™</a>. All Rights Reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top"
+    class="fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-lg text-white bg-linear-to-r from-brand-navy to-brand-slate hover:from-blue-700 hover:to-slate-600 transition-all duration-300 opacity-0 translate-y-10 invisible"
+    aria-label="Back to Top">
+    <i class="fas fa-arrow-up text-lg"></i>
+  </button>
+
+  <!-- Project Modal (Structure) -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" aria-modal="true"
+    role="dialog" aria-hidden="true">
+    <!-- Backdrop -->
+    <div class="modal-overlay absolute inset-0 bg-gray-900 bg-opacity-75 backdrop-blur-sm" id="modal-backdrop"></div>
+
+    <!-- Modal Content -->
+    <div
+      class="modal-content relative bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95 opacity-0">
+      <!-- Close Button -->
+      <button type="button"
+        class="absolute top-3 right-3 text-white bg-black/20 hover:bg-black/40 rounded-full w-10 h-10 inline-flex justify-center items-center backdrop-blur-sm transition-colors z-10"
+        id="close-modal">
+        <i class="fas fa-times text-xl"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+
+      <!-- Modal Body (Dynamic) -->
+      <div id="modal-body">
+        <!-- Image Header -->
+        <div class="h-64 md:h-80 w-full bg-gray-200 dark:bg-gray-700 relative overflow-hidden group">
+          <img id="m-image" src="" alt="Project Preview"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div
+            class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent flex items-end p-6 md:p-8">
+            <div>
+              <div id="m-tags" class="flex flex-wrap gap-2 mb-2"></div>
+              <h3 id="m-title" class="text-3xl md:text-4xl font-bold text-white">Project Title</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 md:p-8 space-y-8">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-2 space-y-6">
+              <div>
+                <h4 class="text-lg font-semibold text-brand-navy dark:text-white mb-2 flex items-center"><i
+                    class="fas fa-info-circle mr-2 text-brand-slate"></i>Summary</h4>
+                <p id="m-summary" class="text-brand-grey dark:text-gray-300 leading-relaxed"></p>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-brand-navy dark:text-white mb-2 flex items-center"><i
+                    class="fas fa-exclamation-circle mr-2 text-brand-slate"></i>The Problem</h4>
+                <p id="m-problem" class="text-brand-grey dark:text-gray-300 leading-relaxed"></p>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-brand-navy dark:text-white mb-2 flex items-center"><i
+                    class="fas fa-star mr-2 text-brand-slate"></i>Key Features</h4>
+                <ul id="m-features"
+                  class="list-disc pl-5 text-brand-grey dark:text-gray-300 space-y-1 marker:text-brand-navy dark:marker:text-blue-400">
+                </ul>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="bg-gray-50 dark:bg-gray-700/30 p-4 rounded-xl">
+                <h4 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3">Tech Stack
+                </h4>
+                <div id="m-stack" class="flex flex-wrap gap-2"></div>
+              </div>
+
+              <div class="flex flex-col space-y-3">
+                <a id="m-repo" href="#" target="_blank"
+                  class="w-full inline-flex justify-center items-center px-5 py-3 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 transition-all transform hover:-translate-y-0.5">
+                  <i class="fab fa-github mr-2"></i> View Code
+                </a>
+                <a id="m-demo" href="#" target="_blank"
+                  class="w-full inline-flex justify-center items-center px-5 py-3 text-sm font-medium text-brand-navy bg-white border border-brand-navy rounded-lg hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-transparent dark:text-white dark:border-white dark:hover:bg-white/10 transition-all transform hover:-translate-y-0.5">
+                  <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+
+
+
+
+
+</body>
+
+</html>
