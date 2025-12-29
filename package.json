@@ -1,7 +1,9 @@
 {
-  "name": "teacher-portfolio",
-  "private": true,
-  "version": "0.0.0",
+  "name": "it-guy-portfolio",
+  "description": "A modern, responsive developer portfolio template built with Vite, Tailwind CSS v4, and Vanilla JavaScript. Features dark/light mode, project filtering, modal popups, and smooth animations.",
+  "version": "1.0.0",
+  "author": "Aayush Mehta",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
